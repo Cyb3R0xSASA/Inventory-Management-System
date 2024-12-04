@@ -1,0 +1,119 @@
+/* General Style */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+:root {
+    --color-one: #17153B;
+    --color-two: #2E236C;
+    --color-three: #433D8B;
+    --color-four: #535C91;
+}
+
+button {
+    box-sizing: border-box;
+}
+
+button:hover,
+select{
+    cursor: pointer;
+}
+
+a {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+/* #17153B 2E236C 433D8B 535C91 */
+body {
+    background: var(--color-two);
+}
+
+/* Base-container */
+.container {
+    padding-inline: 15px;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .container {
+        max-width: 750px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .container {
+        max-width: 970px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+}
+
+/* XXL devices (extra-large desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+/* Classes */
+
+.fx {
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+
+.fx-cc {
+    justify-content: center;
+    align-items: center;
+}
+
+.fx-b-c {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.g {
+    gap: 10px;
+}
+
+/* Main-style */
+
+header,
+form {
+    flex-direction: column;
+    margin-block: 20px;
+    color: var(--color-four);
+}
+
+header p {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+form input,
+form button,
+select {
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: var(--color-one);
+}
+

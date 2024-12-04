@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Inventory Management System</title>
+</head>
+<body>
+    <header class="fx fx-cc container">
+        <h1>0xSASA - CRUDS </h1>
+        <p>Inventory Management System</p>
+    </header>
+    <main class="container">
+        <form class="create fx g">
+            <input type="text" name="title" id="title" placeholder="Title">
+            <div class="price fx fx-b-c g">
+                <input type="number" name="price" id="price" placeholder="Price">
+                <input type="number" name="taxes" id="taxes" placeholder="Taxes">
+                <input type="number" name="discount" id="discount" placeholder="Discount">
+                <p>total</p>
+            </div>
+            <input type="number" name="count" id="count" placeholder="Count">
+            <input type="text" name="category" id="category" placeholder="Category">
+            <button type="submit">Create</button>
+        </form>
+        <form>
+            <div class="search fx g">
+                <input type="text" name="search" id="search" placeholder="Search">
+                <select name="search-type" id="search-type">
+                    <option value="title">Title</option>
+                    <option value="price">Price</option>
+                    <option value="taxes">Taxes</option>
+                    <option value="discount">Discount</option>
+                    <option value="count">Count</option>
+                    <option value="category">Category</option>
+                </select>
+                <button type="submit">Search</button>
+            </div>
+        </form>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
