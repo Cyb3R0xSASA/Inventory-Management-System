@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Inventory Management System</title>
 </head>
 <body>
@@ -12,33 +13,69 @@
         <p>Inventory Management System</p>
     </header>
     <main class="container">
-        <form class="create fx g">
+        <div class="create fx g">
             <input type="text" name="title" id="title" placeholder="Title">
-            <div class="price fx fx-b-c g">
-                <input type="number" name="price" id="price" placeholder="Price">
-                <input type="number" name="taxes" id="taxes" placeholder="Taxes">
-                <input type="number" name="discount" id="discount" placeholder="Discount">
-                <p>total</p>
-            </div>
-            <input type="number" name="count" id="count" placeholder="Count">
             <input type="text" name="category" id="category" placeholder="Category">
-            <button type="submit">Create</button>
-        </form>
-        <form>
-            <div class="search fx g">
-                <input type="text" name="search" id="search" placeholder="Search">
-                <select name="search-type" id="search-type">
+            <input type="number" name="count" id="count" placeholder="Count">
+            <div class="price fx fx-b-c g">
+                <input onkeyup="getTotal()" type="number" name="price" id="price" placeholder="Price">
+                <input onkeyup="getTotal()" type="number" name="taxes" id="taxes" placeholder="Taxes">
+                <input onkeyup="getTotal()" type="number" name="ads" id="ads" placeholder="Ads">
+                <input onkeyup="getTotal()" type="number" name="discount" id="discount" placeholder="Discount">
+                <p id="total-parent">Total: <span id="total"></span></p>
+            </div>
+            <button id="create">Create</button>
+        </div>
+        <div class="parent">
+            <div class="search fx fx-b-c g">
+                <input type="text" name="search" id="searchValue" placeholder="Search">
+                <select name="search-type" id="searchType">
                     <option value="title">Title</option>
+                    <option value="category">Category</option>
+                    <option value="count">Count</option>
                     <option value="price">Price</option>
                     <option value="taxes">Taxes</option>
+                    <option value="ads">Ads</option>
                     <option value="discount">Discount</option>
-                    <option value="count">Count</option>
-                    <option value="category">Category</option>
                 </select>
-                <button type="submit">Search</button>
+                <button id="search">Search</button>
             </div>
-        </form>
+        </div>
+        <div class="output">
+            <div class="delete parent">
+            </div>
+            <table class=" container">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Count</th>
+                        <th>Price</th>
+                        <th>Taxes</th>
+                        <th>Ads</th>
+                        <th>Discount</th>
+                        <th>Total</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                </tbody>
+            </table>
+            <div id="no_result" class="fx fx-cc">
+                
+            </div>
+        </div>
     </main>
+    <div id="overlay"></div>
+    <div id="popup">
+        <h3></h3>
+        <p></p>
+        <button class="close-btn" id="closePopup">Close</button>
+        <button class="confirm-btn" id="confirmBtn">Confirm</button>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
